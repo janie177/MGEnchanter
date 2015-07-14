@@ -1,6 +1,5 @@
 package com.minegusta.mgenchanter.main;
 
-import com.minegusta.mgenchanter.commands.EnchantingCommand;
 import com.minegusta.mgenchanter.listeners.EnchantingListener;
 import com.minegusta.mgenchanter.tasks.EnchantingMenuTask;
 import org.bukkit.Bukkit;
@@ -19,9 +18,6 @@ public class MGEnchanter extends JavaPlugin {
 
         //Listeners
         Bukkit.getPluginManager().registerEvents(new EnchantingListener(), this);
-
-        //Commands
-        getCommand("mgenchant").setExecutor(new EnchantingCommand());
 
         //Tasks
         EnchantingMenuTask.start();

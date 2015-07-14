@@ -2,8 +2,3 @@ main: com.minegusta.mgenchanter.main.MGEnchanter
 name: MGEnchanter
 author: janie177
 version: ${project.version}
-commands:
-   mgenchant:
-      aliases: [enchant, e, enchanting, enchanter, mgenchanter]
-      usage: /mgenchant
-      description: Command for MGEnchanter.

@@ -1,12 +1,8 @@
 package com.minegusta.mgenchanter.tasks;
 
-import com.google.common.collect.Maps;
 import com.minegusta.mgenchanter.main.MGEnchanter;
 import com.minegusta.mgenchanter.menu.EnchantingMenu;
 import org.bukkit.Bukkit;
-import org.bukkit.inventory.Inventory;
-
-import java.util.concurrent.ConcurrentMap;
 
 public class EnchantingMenuTask
 {
