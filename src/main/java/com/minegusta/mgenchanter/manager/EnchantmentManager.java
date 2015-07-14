@@ -42,11 +42,11 @@ public class EnchantmentManager
             return false;
         }
 
-        int amountAdded = addable;
+        int amountAdded = RandomUtil.randomNumber(type.getMaxAmount());
 
-        if(addable > type.getMaxAmount())
+        if(amountAdded > addable)
         {
-            amountAdded = type.getMaxAmount();
+            amountAdded = addable;
         }
 
         //Apply the enchantments

@@ -43,7 +43,7 @@ public class EnchantingMenu
 
         for(ItemStack i : inv.getContents())
         {
-            if(i.getType() == Material.STAINED_GLASS_PANE)
+            if(i != null && i.getType() == Material.STAINED_GLASS_PANE)
             {
                 int newData = i.getDurability() + 1;
                 if(newData > 14) newData = 0;
