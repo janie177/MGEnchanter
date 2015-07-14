@@ -59,6 +59,12 @@ public class EnchantingListener implements Listener
                     ChatUtil.sendFormattedMessage(p, "You need atleast 25 levels to enchant an item!", "You only have " + p.getLevel() + ".");
                     return;
                 }
+
+                if(e.getCurrentItem() == null || e.getCurrentItem().getType() == Material.AIR)
+                {
+                    return;
+                }
+
                 if(EnchantmentManager.process(p, e.getCursor()))
                 {
                     p.setLevel(p.getLevel() - 25);
