@@ -4,10 +4,11 @@ import com.minegusta.mgenchanter.util.RandomUtil;
 
 public class Levels
 {
-    private static final int level2Chance = 25;
-    private static final int level3Chance = 10;
-    private static final int level4Chance = 5;
-    private static final int level5Chance = 2;
+    private static final int level2Chance = 40;
+    private static final int level3Chance = 20;
+    private static final int level4Chance = 10;
+    private static final int level5Chance = 5;
+    private static final int level6Chance = 2;
 
     public static int getLevel(EnchantmentType ench)
     {
@@ -37,6 +38,8 @@ public class Levels
             case 4: returned = level4Chance;
                 break;
             case 5: returned = level5Chance;
+                break;
+            case 6: returned = level6Chance;
                 break;
             default: returned = 100;
         }
