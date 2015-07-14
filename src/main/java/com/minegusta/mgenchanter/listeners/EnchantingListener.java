@@ -1,8 +1,12 @@
 package com.minegusta.mgenchanter.listeners;
 
+import com.minegusta.mgenchanter.main.MGEnchanter;
 import com.minegusta.mgenchanter.manager.EnchantmentManager;
 import com.minegusta.mgenchanter.menu.EnchantingMenu;
 import com.minegusta.mgenchanter.util.ChatUtil;
+import org.bukkit.Bukkit;
+import org.bukkit.Effect;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -51,8 +55,13 @@ public class EnchantingListener implements Listener
                 if(EnchantmentManager.process(p, e.getCursor()))
                 {
                     p.setLevel(p.getLevel() - 25);
-                    EnchantingMenu.openResultMenu(p, e.getCursor());
-                    p.getInventory().remove(e.getCursor());
+
+                    final Location l = p.getLocation();
+                    for(int i = 0; i < 4; i++)
+                    {
+                        final int k = i;
+                        Bukkit.getScheduler().scheduleSyncDelayedTask(MGEnchanter.getPlugin(), ()-> l.getWorld().spigot().playEffect(l, Effect.FLYING_GLYPH, 0, 0, 1, k * 0.5F, 1, 1/30, 30, 30));
+                    }
                 }
             }
         }

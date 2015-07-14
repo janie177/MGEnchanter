@@ -33,13 +33,6 @@ public class EnchantingMenu
         invs.put(inv, true);
     }
 
-    public static void openResultMenu(Player p, ItemStack i)
-    {
-        Inventory inv = Bukkit.createInventory(p, 9, ChatColor.DARK_PURPLE + "Enchanting Result");
-        inv.setItem(4, i);
-        p.openInventory(inv);
-    }
-
     public static void update(Inventory inv, boolean itemSlot)
     {
         if(itemSlot)
