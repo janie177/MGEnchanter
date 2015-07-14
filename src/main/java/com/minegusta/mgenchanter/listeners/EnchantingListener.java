@@ -51,6 +51,8 @@ public class EnchantingListener implements Listener
                 if(EnchantmentManager.process(p, e.getCursor()))
                 {
                     p.setLevel(p.getLevel() - 25);
+                    p.getInventory().addItem(e.getCursor().clone());
+                    e.getCursor().setType(Material.AIR);
                     p.closeInventory();
                 }
             }
