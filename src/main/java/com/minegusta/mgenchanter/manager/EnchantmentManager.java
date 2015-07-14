@@ -10,6 +10,7 @@ import com.minegusta.mgenchanter.util.RandomUtil;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
@@ -58,7 +59,15 @@ public class EnchantmentManager
         {
             if(!i.containsEnchantment(enchantmentType.getEnchantment()))
             {
-                possibilities.add(enchantmentType);
+                if(enchantmentType.getEnchantment() == Enchantment.SILK_TOUCH && i.containsEnchantment(Enchantment.LOOT_BONUS_BLOCKS))
+                {
+                    continue;
+                }
+                else if(enchantmentType.getEnchantment() == Enchantment.LOOT_BONUS_BLOCKS && i.containsEnchantment(Enchantment.SILK_TOUCH))
+                {
+                    continue;
+                }
+                else possibilities.add(enchantmentType);
             }
         }
 
@@ -79,6 +88,14 @@ public class EnchantmentManager
             i.addUnsafeEnchantment(typeAdded.getEnchantment(), Levels.getLevel(typeAdded));
 
             possibilities.remove(typeAdded);
+            if(typeAdded.getEnchantment() == Enchantment.SILK_TOUCH && possibilities.contains(EnchantmentType.FORTUNE))
+            {
+                possibilities.remove(EnchantmentType.FORTUNE);
+            }
+            else if(typeAdded.getEnchantment() == Enchantment.LOOT_BONUS_BLOCKS && possibilities.contains(EnchantmentType.SILK_TOUCH))
+            {
+                possibilities.remove(EnchantmentType.SILK_TOUCH);
+            }
         }
 
         ChatUtil.sendFormattedMessage(p, "You enchanted an item!", "It cost you 25 levels.");
