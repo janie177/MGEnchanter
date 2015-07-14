@@ -37,7 +37,7 @@ public class EnchantingMenu
     {
         if(itemSlot)
         {
-            if(inv.getItem(2) != null || inv.getItem(2).getType() != Material.AIR)inv.setItem(2, new ItemStack(Material.AIR));
+            if(inv.getItem(2) != null && inv.getItem(2).getType() != Material.AIR)inv.setItem(2, new ItemStack(Material.AIR));
             else inv.setItem(2, createStack(Material.ITEM_FRAME, 0, ChatColor.DARK_PURPLE + "Item Slot", ChatColor.LIGHT_PURPLE + "Place Item", ChatColor.LIGHT_PURPLE + "Here."));
         }
 
