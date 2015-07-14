@@ -76,7 +76,7 @@ public class EnchantmentManager
             }
             EnchantmentType typeAdded = possibilities.get(RandomUtil.randomNumber(possibilities.size()) - 1);
 
-            i.addEnchantment(typeAdded.getEnchantment(), Levels.getLevel(typeAdded));
+            i.addUnsafeEnchantment(typeAdded.getEnchantment(), Levels.getLevel(typeAdded));
 
             possibilities.remove(typeAdded);
         }

@@ -22,7 +22,7 @@ public class EnchantingMenu
         Inventory inv = Bukkit.createInventory(p, 9, ChatColor.DARK_PURPLE + "Enchanting Table");
         for(int i = 0; i < inv.getSize(); i++)
         {
-            inv.setItem(i, createStack(Material.STAINED_GLASS_PANE, 1, "", ""));
+            inv.setItem(i, createStack(Material.STAINED_GLASS_PANE, 1, " ", ""));
         }
 
         inv.setItem(1, createStack(Material.BOOK, 0, ChatColor.LIGHT_PURPLE + "Enchanting", ChatColor.GREEN + "Place your item", ChatColor.GREEN + "next to this.", ChatColor.DARK_GREEN + "--->", ChatColor.LIGHT_PURPLE + "Cost: " + ChatColor.AQUA + "25"));
@@ -31,6 +31,13 @@ public class EnchantingMenu
 
         p.openInventory(inv);
         invs.put(inv, true);
+    }
+
+    public static void openResultMenu(Player p, ItemStack i)
+    {
+        Inventory inv = Bukkit.createInventory(p, 9, ChatColor.DARK_PURPLE + "Enchanting Result");
+        inv.setItem(4, i);
+        p.openInventory(inv);
     }
 
     public static void update(Inventory inv, boolean itemSlot)
