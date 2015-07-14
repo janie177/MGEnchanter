@@ -50,8 +50,13 @@ public class EnchantingListener implements Listener
         {
             e.setCancelled(true);
 
-            if(e.getSlot() == 2 && p.getLevel() > 24)
+            if(e.getSlot() == 2)
             {
+                if(p.getLevel() < 25)
+                {
+                    ChatUtil.sendFormattedMessage(p, "You need atleast 25 levels to enchant an item!", "You only have " + p.getLevel() + ".");
+                    return;
+                }
                 if(EnchantmentManager.process(p, e.getCursor()))
                 {
                     p.setLevel(p.getLevel() - 25);
