@@ -25,7 +25,7 @@ public class EnchantingListener implements Listener
                 return;
             }
 
-            if(EnchantmentManager.hasBooksNear(e.getClickedBlock()))
+            if(!EnchantmentManager.hasBooksNear(e.getClickedBlock()))
             {
                 ChatUtil.sendFormattedMessage(e.getPlayer(), "This enchanting table needs more bookcases!", "It needs at least 20 to work.");
                 return;
