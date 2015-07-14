@@ -4,7 +4,7 @@ import com.minegusta.mgenchanter.util.RandomUtil;
 
 public class Levels
 {
-    private static final int level2Chance = 20;
+    private static final int level2Chance = 25;
     private static final int level3Chance = 10;
     private static final int level4Chance = 5;
     private static final int level5Chance = 2;

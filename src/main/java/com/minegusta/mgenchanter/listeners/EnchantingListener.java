@@ -46,6 +46,8 @@ public class EnchantingListener implements Listener
 
         Player p = (Player) e.getWhoClicked();
 
+        if(e.getClickedInventory() == null)return;
+
         if(EnchantingMenu.invs.containsKey(e.getClickedInventory()))
         {
             e.setCancelled(true);
