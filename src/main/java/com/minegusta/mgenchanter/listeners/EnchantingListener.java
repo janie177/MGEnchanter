@@ -60,7 +60,7 @@ public class EnchantingListener implements Listener
                     return;
                 }
 
-                if(e.getCurrentItem() == null || e.getCurrentItem().getType() == Material.AIR)
+                if(e.getCursor() == null || e.getCursor().getType() == Material.AIR)
                 {
                     return;
                 }
