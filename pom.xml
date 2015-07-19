@@ -9,13 +9,12 @@
     <version>0.1.0.0</version>
     <properties> <!-- It is important to keep up to date manually. -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spigot.version>1.8.7-R0.1-SNAPSHOT</spigot.version>
     </properties>
 
     <repositories>
         <repository>
-            <id>md_5-releases</id>
-            <url>http://repo.md-5.net/content/repositories/snapshots</url>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
     </repositories>
 
@@ -23,7 +22,8 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>${spigot.version}</version>
+            <version>1.8.7-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Apache Lang -->
